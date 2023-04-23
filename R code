@@ -1,5 +1,3 @@
-install.packages("ggpubr")
-
 # Packages
 library(readr)
 library(ggplot2)
@@ -86,13 +84,9 @@ plot3_3.png
 
 # Plot 4
 
-par(mfrow=c(2,2))
-
-
-
-plot4_2.png <- ggplot(household_power_consumption_4,
-                    aes(x = dmy_hms(household_power_consumption_4$Time),
-                       y = as.numeric(household_power_consumption_4$Voltage))) + 
+plot4_2.png <- ggplot(household_power_consumption_3,
+                    aes(x = dmy_hms(household_power_consumption_3$Time),
+                       y = as.numeric(household_power_consumption_3$Voltage))) + 
   geom_line() + 
   labs(y = "Voltage",
        x  = "datetime",
@@ -102,9 +96,9 @@ plot4_2.png <- ggplot(household_power_consumption_4,
 plot4_2.png 
 
 
-plot4_4.png <- ggplot(household_power_consumption_4,
-                      aes(x = dmy_hms(household_power_consumption_4$Time),
-                          y = as.numeric(household_power_consumption_4$Global_reactive_power))) + 
+plot4_4.png <- ggplot(household_power_consumption_3,
+                      aes(x = dmy_hms(household_power_consumption_3$Time),
+                          y = as.numeric(household_power_consumption_3$Global_reactive_power))) + 
   geom_line() + 
   labs(y = "Global_reactive_power",
        x  = "datetime",
@@ -114,6 +108,32 @@ plot4_4.png <- ggplot(household_power_consumption_4,
 plot4_4.png 
 
 ggarrange(plot2_1.png, plot4_2.png, plot3_3.png, plot4_4.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
